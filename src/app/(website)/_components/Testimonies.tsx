@@ -16,10 +16,7 @@ export default function ParentTestimonies() {
   const [open, setOpen] = useState(false)
   return (
     <section className="w-full min-h-[516px] bg-[#202426] pt-12 sm:pt-16 md:pt-20 pb-12 md:pb-16 xl:pb-[138px]">
-      <div
-        className="w-full 4xl:w-[1440px] px-4 sm-[20px] md:px-[30px] 2xl:px-[64px]"
-        data-aos="fade-up"
-      >
+      <div className="w-full 4xl:w-[1440px] px-4 sm-[20px] md:px-[30px] 2xl:px-[64px]">
         {/* Header */}
         <div className="w-full flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 sm:gap-6 xl:gap-8 mb-6 sm:mb-8 xl:mb-12">
           <h2 className="font-inter font-normal text-[#F7F7EE] text-[30px]/[36px] lg:text-[50px]/[48px] -tracking-[0.72px] md:tracking-normal align-middle">

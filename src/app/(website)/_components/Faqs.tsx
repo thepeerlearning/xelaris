@@ -63,10 +63,7 @@ export default function FAQsSection() {
 
   return (
     <div className="w-full bg-[#202426] pt-10 pb-10 md:pt-16 lg:pt-[118px] lg:pb-10 min-h-[400px] md:min-h-[500px] lg:min-h-[637px] flex justify-center items-center">
-      <div
-        className="w-full max-w-[1440px] px-5 sm:px-6.5 md:px-8 lg:px-[44px] 2xl:px-[38px] 3xl:px-[24px] flex flex-col gap-6 md:gap-10 lg:gap-[64px]"
-        data-aos="fade-up"
-      >
+      <div className="w-full max-w-[1440px] px-5 sm:px-6.5 md:px-8 lg:px-[44px] 2xl:px-[38px] 3xl:px-[24px] flex flex-col gap-6 md:gap-10 lg:gap-[64px]">
         <h4 className="w-full font-inter font-normal text-3xl sm:text-4xl md:text-5xl lg:text-[60px]/[60px] tracking-normal align-middle text-[#F7F7EE]">
           FAQ
         </h4>

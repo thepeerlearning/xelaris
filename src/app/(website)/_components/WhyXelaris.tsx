@@ -27,10 +27,7 @@ const reasons = [
 export default function WhyXelarisSection() {
   return (
     <section className="w-full bg-[#FBF8E6] py-8 sm:py-12 md:py-16 lg:py-20 xl:py-[117px]">
-      <div
-        className="w-full 4xl:w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-[44px] flex flex-col gap-[45px]"
-        data-aos="fade-up"
-      >
+      <div className="w-full 4xl:w-[1440px] px-4 sm:px-6 lg:px-8 xl:px-[44px] flex flex-col gap-[45px]">
         <h2 className="font-semibold text-[#202426] text-3xl sm:text-3xl md:text-4xl lg:text-[50px] leading-tight mb-8 sm:mb-10 lg:mb-12">
           why parents choose us
         </h2>

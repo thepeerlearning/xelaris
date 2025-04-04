@@ -14,7 +14,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full min-h-[600px] bg-[#202426] flex justify-center items-center">
-      <div className="w-full flex flex-col 2xl:w-[1200px] " data-aos="fade-up">
+      <div className="w-full flex flex-col 2xl:w-[1200px]">
         <div className="w-full h-[108px] py-[22.78px] border-b-[0.2px] border-[#6C6A6B] xl:px-5 2xl:px-0">
           <div className="w-full px-6 xl:px-0">
             <WhiteAppLogo />

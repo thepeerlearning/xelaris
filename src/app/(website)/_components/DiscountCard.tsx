@@ -1,10 +1,6 @@
 export default function DiscountCardSection() {
   return (
-    <div
-      className="w-full bg-white py-16 md:py-24 min-h-[608px] flex flex-col gap-[47px] relative"
-      data-aos="fade-up"
-      data-aos-once={true}
-    >
+    <div className="w-full bg-white py-16 md:py-24 min-h-[608px] flex flex-col gap-[47px] relative">
       <div className="w-full flex flex-col justify-center items-center">
         <div className="relative w-full h-full lg:h-[553px] lg:max-w-[1010px] xl:max-w-[1206px] xxl:max-w-[1263px] flex flex-col lg:flex-row justify-center items-center px-6 xl:px-0 bg-[#131820]">
           <div className="w-full h-full xl:h-[435px] xl:max-w-[1030px] flex flex-col lg:flex-row gap-8 justify-between lg:px-8 xl:px-0 py-12">

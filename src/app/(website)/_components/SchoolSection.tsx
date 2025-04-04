@@ -41,10 +41,7 @@ const schools: SchoolProps[] = [
 export default function SchoolSection() {
   return (
     <div className="w-full min-h-[1026px] flex justify-center items-center bg-[#FBF8E6] py-20">
-      <div
-        className="w-full xl:w-[920px] 3xl:w-[1312px] flex flex-col gap-8 justify-center items-center"
-        data-aos="fade-up"
-      >
+      <div className="w-full xl:w-[920px] 3xl:w-[1312px] flex flex-col gap-8 justify-center items-center">
         <h2 className="w-full font-inter font-normal text-secondary text-center text-[30px]/[33.1px] xl:text-[50px]/[44px]">
           Explore our school of technology
         </h2>

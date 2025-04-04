@@ -14,10 +14,7 @@ export default function StudentShowCase() {
 
   return (
     <section className="w-full bg-[#FBF8E6] py-12 sm:py-14 md:py-16 xl:py-[87px] flex justify-center items-center">
-      <div
-        className="w-full 4xl:w-[1440px] px-2 xl:px-8 3xl:pr-[196px] 3xl:pl-[232px] flex justify-center items-center"
-        data-aos="fade-up"
-      >
+      <div className="w-full 4xl:w-[1440px] px-2 xl:px-8 3xl:pr-[196px] 3xl:pl-[232px] flex justify-center items-center">
         <div className="w-full xl:w-[1012px] flex flex-col xl:flex-row  gap-4 lg:gap-[28px] bg-[#FBF8E6] rounded-[6px] overflow-hidden">
           {/* Video Thumbnail */}
           <div

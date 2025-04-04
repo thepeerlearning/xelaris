@@ -12,13 +12,7 @@ export default function HeroSection() {
       <div className="w-full h-full flex justify-center items-center px-4 sm:px-6 md:px-8 lg:px-10 3xl:px-0">
         <div className="w-full xl:w-[960px] 2xl:w-[1206px] pt-24 sm:pt-[120px] lg:pt-[150px] pb-12 lg:pb-[80px] flex flex-col xl:flex-row items-center gap-10 xl:gap-[114px]">
           {/* Left Section */}
-          <div
-            className="flex-1 flex flex-col gap-6 justify-center items-center xl:items-start text-center xl:text-left"
-            data-aos="fade-right"
-            data-aos-duration="800"
-            data-aos-delay="500"
-            data-aos-offset="200"
-          >
+          <div className="flex-1 flex flex-col gap-6 justify-center items-center xl:items-start text-center xl:text-left">
             <h1 className="font-inter font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[50px]/[52px] text-secondary">
               The Best Place for Kids <br /> &amp; Teens to Learn Tech Skills.
               <span className="text-primary underline underline-offset-4">
@@ -44,11 +38,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right Section - Hero Image */}
-          <div
-            className="hidden xl:flex"
-            data-aos="fade-left"
-            data-aos-delay="500"
-          >
+          <div className="hidden xl:flex">
             <Image
               src="/images/lg_hero-right_img.svg"
               alt="signup form image"

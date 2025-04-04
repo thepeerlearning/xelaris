@@ -140,10 +140,7 @@ export default function ProjectSection() {
 
   return (
     <div className="w-full h-full bg-[#202426] pt-[92px] 2xl:pt-[96px] md:pb-16 2xl:pb-[138px] flex justify-center items-center">
-      <div
-        className="w-full 3xl:w-[1312px] flex flex-col justify-center gap-[30.87px] xl:gap-10 px-3 sm:px-[19.3px] md:px-6 lg:px-12 2xl:px-16 relative z-1"
-        data-aos="fade-up"
-      >
+      <div className="w-full 3xl:w-[1312px] flex flex-col justify-center gap-[30.87px] xl:gap-10 px-3 sm:px-[19.3px] md:px-6 lg:px-12 2xl:px-16 relative z-1">
         <h4 className="w-full font-inter font-normal text-[#FBF8E6] text-[30px]/[33.3px] md:text-[40px]/[44px] xl:text-[50px]/[44.8px] text-center">
           See what our students are building
         </h4>
