@@ -64,7 +64,7 @@ export const addChild = createAsyncThunk(
     try {
       const response = await api.post("parent-add-child", inputData)
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("c_id", data.id)
         return response?.data
       }
@@ -91,7 +91,7 @@ export const updateChild = createAsyncThunk(
     try {
       const response = await api.put("parent-update-child", inputData)
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("c_id", data.id)
         toast.success("Child information updated successfully")
         return response?.data

@@ -1,21 +1,14 @@
 "use client"
 import { MenuIcon } from "@/components/svgs"
-import { ChevronDownIcon, X } from "lucide-react"
+import { X } from "lucide-react"
 import { AnimatePresence, motion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { FC, useEffect, useState } from "react"
-import { NavMenu, menu } from "./NavMenu"
-import TrialClassButton from "./TrialClassButton"
-import { Button } from "@/components/ui/button"
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
 import { MobileMenu } from "./AccrodionMenu"
+import { NavMenu } from "./NavMenu"
+import TrialClassButton from "./TrialClassButton"
 
 export const Header: FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
@@ -42,7 +35,7 @@ export const Header: FC = () => {
           </div>
           {/* Navigation */}
 
-          <NavMenu />
+          <NavMenu pathname={pathname} />
           <div className="sm-w-[280px] lg:w-[338px] h-[40px] hidden lg:flex items-center gap-[12px]">
             <Link
               href="/parent-login"

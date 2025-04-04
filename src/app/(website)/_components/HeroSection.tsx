@@ -26,7 +26,7 @@ export default function HeroSection() {
               </span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg xl:text-base 2xl:text-[18px]/[29px] font-inter text-[#333]">
-              We're building a foundation for future pioneers
+              We&apos;re building a foundation for future pioneers
               <br className="hidden lg:inline" /> in software engineering,
               artificial intelligence,
               <br className="hidden lg:inline" /> blockchain, and computing.

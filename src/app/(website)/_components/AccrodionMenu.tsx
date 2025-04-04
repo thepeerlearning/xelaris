@@ -43,8 +43,11 @@ export function MobileMenu({
                               "text-primary font-semibold"
                           )}
                           onClick={(e) => {
-                            !page.isReady && e.preventDefault()
-                            closeDrawer
+                            if (!page.isReady) {
+                              e.preventDefault()
+                            }
+                            // If you want to call closeDrawer, do it like this:
+                            closeDrawer()
                           }}
                         >
                           {page.title}

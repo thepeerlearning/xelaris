@@ -49,7 +49,7 @@ export default function Footer() {
                         Careers{" "}
                       </Link>
                       <span className="w-[63px] h-[16px] flex justify-center items-center rounded bg-primary  font-inter font-medium text-white text-[7.6px] tracking-normal text-center uppercase ">
-                        We're Hiring
+                        We&apos;re Hiring
                       </span>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ export default function Footer() {
                           Careers{" "}
                         </Link>
                         <span className="w-fit h-[16px] flex justify-center items-center rounded bg-primary  font-inter font-medium text-white text-[7.6px] tracking-normal text-center uppercase px-2">
-                          We're Hiring
+                          We&apos;re Hiring
                         </span>
                       </div>
                     </AccordionContent>

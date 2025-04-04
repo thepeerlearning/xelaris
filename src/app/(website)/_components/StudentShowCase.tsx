@@ -60,15 +60,16 @@ export default function StudentShowCase() {
 
               <div className="font-normal font-inter space-y-4 sm:space-y-[26px] text-center md:text-left text-sm sm:text-[17px]/[28px] md:text-[17.44px]/[28px] -tracking-[0.2px]">
                 <p>
-                  We're super excited to share that Fedir, one of our students,
-                  came in 2nd place in Computer Science at the 2024-2025
-                  National BETA State Convention!
+                  We&apos;re super excited to share that Fedir, one of our
+                  students, came in 2nd place in Computer Science at the
+                  2024-2025 National BETA State Convention!
                 </p>
 
                 <p>
-                  This is a huge achievement, and we're so proud of Fedir's hard
-                  work and dedication. It also shows how our online classes are
-                  helping kids build real tech skills and compete at top levels.
+                  This is a huge achievement, and we&apos;re so proud of
+                  Fedir&apos;s hard work and dedication. It also shows how our
+                  online classes are helping kids build real tech skills and
+                  compete at top levels.
                 </p>
               </div>
             </div>

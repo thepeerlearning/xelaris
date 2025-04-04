@@ -32,7 +32,7 @@ export const signup = createAsyncThunk(
     try {
       const response = await api.post("register", inputData)
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("token", data.token)
         Cookies.set("step", "account_created")
         Cookies.set("c_id", data.child_id)
@@ -62,7 +62,7 @@ export const classSchedule = createAsyncThunk(
     try {
       const response = await api.post("schedule", inputData)
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("token", data.token)
         Cookies.set("c_id", data.child_id)
         Cookies.set("cl_id", data.id)
@@ -153,7 +153,7 @@ export const validateEmail = createAsyncThunk(
         return response.data
       }
     } catch (error: any) {
-      return rejectWithValue()
+      return rejectWithValue(error)
     }
   }
 )

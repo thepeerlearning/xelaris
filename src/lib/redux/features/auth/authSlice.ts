@@ -10,7 +10,7 @@ export const adminLogin = createAsyncThunk(
       const response = await api.post("admin-authenticate", inputData)
 
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("t_code", data.jwtToken)
         return data
       }
@@ -37,7 +37,7 @@ export const childLogin = createAsyncThunk(
     try {
       const response = await api.post("child-authenticate", inputData)
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("t_code", data.jwtToken)
         return data
       }
@@ -65,7 +65,7 @@ export const parentlogin = createAsyncThunk(
       const response = await api.post("parent-authenticate", inputData)
 
       if (response) {
-        let { data } = response.data
+        const { data } = response.data
         Cookies.set("t_code", data.jwtToken)
         return data
       }
