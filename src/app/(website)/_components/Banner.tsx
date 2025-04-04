@@ -32,23 +32,7 @@ export default function Banner() {
           <p className="w-[295px] text-center text-white text-sm tracking-[1.57px] font-inter font-normal">
             TRUSTED BY PARENTS FROM
           </p>
-          {/* <div className="w-full grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-2 2xl:grid-cols-4 gap-[23px] xl:gap-[33px]">
-            <AmazonLogo /> <TeslaLogo /> <MasterCardLogo /> <DuolingoLogo />
-          </div> */}
-          {/* <div className="w-full flex flex-wrap 2xl:flex-nowrap gap-[23px] xl:gap-[33px]">
-            <div className="w-1/2 lg:w-1/4 xl:w-1/4 2xl:w-1/4">
-              <AmazonLogo />
-            </div>
-            <div className="w-1/2 lg:w-1/4 xl:w-1/4 2xl:w-1/4">
-              <TeslaLogo />
-            </div>
-            <div className="w-1/2 lg:w-1/4 xl:w-1/4 2xl:w-1/4">
-              <MasterCardLogo />
-            </div>
-            <div className="w-1/2 lg:w-1/4 xl:w-1/4 2xl:w-1/4">
-              <DuolingoLogo />
-            </div>
-          </div> */}
+
           <div className="w-full flex flex-wrap justify-center gap-4 sm:gap-5 lg:gap-6 xl:gap-8 2xl:flex-nowrap 2xl:justify-between 2xl:gap-6">
             <div className="w-[calc(50%-8px)] sm:w-[calc(50%-10px)] lg:w-[calc(25%-18px)] xl:w-[calc(50%-16px)] 2xl:w-auto 2xl:flex-1">
               <AmazonLogo />

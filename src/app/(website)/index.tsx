@@ -21,7 +21,7 @@ export default function LandingRootLayoutWrapper({
     AOS.init({
       duration: 800,
       easing: "ease-in-out",
-      once: false,
+      once: true,
       offset: 200,
       delay: 200,
       mirror: false,

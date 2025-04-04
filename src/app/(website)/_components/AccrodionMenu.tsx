@@ -46,7 +46,6 @@ export function MobileMenu({
                             if (!page.isReady) {
                               e.preventDefault()
                             }
-                            // If you want to call closeDrawer, do it like this:
                             closeDrawer()
                           }}
                         >
