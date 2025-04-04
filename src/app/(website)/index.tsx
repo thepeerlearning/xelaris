@@ -22,7 +22,7 @@ export default function LandingRootLayoutWrapper({
       duration: 800,
       easing: "ease-in-out",
       once: true,
-      offset: 200,
+      offset: 100,
       delay: 200,
       mirror: false,
       anchorPlacement: "top-bottom",
