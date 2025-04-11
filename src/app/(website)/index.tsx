@@ -9,7 +9,8 @@ import AOS from "aos"
 
 export const metadata: Metadata = {
   title: "Home | xelaris",
-  description: "Welcome to xelaris online learning platform",
+  description:
+    "We started Xelaris to inspire young minds to explore and harness the power of technology. Our mission is to educate the next generation of innovators equipping them with the skills to build, the curiosity to explore, and the responsibility to apply their knowledge ethically to achieve social good.",
 }
 
 export default function LandingRootLayoutWrapper({

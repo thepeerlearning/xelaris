@@ -1,5 +1,11 @@
-import React from "react"
+import GetStartedCard from "../../_components/GetStartedCard"
+import HeroSection from "./_components/HeroSection"
 
-export default function ContactUs() {
-  return <div>Contact Us</div>
+export default function AboutXelaris() {
+  return (
+    <div className="w-full relative flex flex-col">
+      <HeroSection />
+      <GetStartedCard />
+    </div>
+  )
 }

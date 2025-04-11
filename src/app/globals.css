@@ -45,6 +45,7 @@
   --breakpoint-sm-md: 24.375rem; /* 390px / 16 = 24.375rem (iPhone 13, iPhone 14 Pro, iPhone 15, iPhone 16)*/
   --breakpoint-md: 26.75rem; /* 428px / 16 = 26.75rem (iPhone 6/7/8 Plus, iPhone XR/11, iPhone 13 Pro Max, iPhone 14 Plus, iPhone 15 Plus, iPhone 16 Plus)*/
   --breakpoint-lg: 40.8125rem; /* 653px / 16 = 40.8125rem (Galaxy Fold unfolded, iPad Mini in portrait)*/
+  --breakpoint-lg-md: 48rem; /* 768px / 16 = 40.8125rem (Galaxy Fold unfolded, iPad Mini in portrait)*/
   --breakpoint-xl: 64rem; /* 1024px / 16 = 64rem (iPad Pro 10.5", iPad Pro 12.9")*/
   --breakpoint-2xl: 80rem; /* 1280px / 16 = 80rem (small laptops, desktops)*/
   --breakpoint-3xl: 90rem; /* 1440px / 16 = 90rem (larger desktops)*/
@@ -128,6 +129,31 @@
     @apply bg-background text-foreground;
   }
 }
+@layer components {
+  .custom-scrollbar {
+    @apply overflow-y-auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
 /* Smooth scroll behavior */
 @media (prefers-reduced-motion: no-preference) {
   html {

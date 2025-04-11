@@ -8,7 +8,7 @@ import React from "react"
 
 interface TrialClassButtonProps {
   className?: string
-  buttonText?: string
+  buttonText?: string | React.ReactNode
 }
 
 const TrialClassButton: React.FC<TrialClassButtonProps> = ({

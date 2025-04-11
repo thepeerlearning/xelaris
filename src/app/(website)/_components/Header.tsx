@@ -36,7 +36,7 @@ export const Header: FC = () => {
           {/* Navigation */}
 
           <NavMenu pathname={pathname} />
-          <div className="sm-w-[280px] lg:w-[338px] h-[40px] hidden lg:flex items-center gap-[12px]">
+          <div className="sm-w-[280px] xl:w-[338px] h-[40px] hidden xl:flex items-center gap-[12px]">
             <Link
               href="/parent-login"
               className="w-[143px] h-[40px] flex justify-center items-center font-inter font-normal text-secondary text-sm leading-[14px] tracking-normal px-4 py-2 uppercase border-[0.5px] border-solid border-[#FBF8E6]"
@@ -45,7 +45,7 @@ export const Header: FC = () => {
             </Link>
             <TrialClassButton />
           </div>
-          <div className="lg:hidden" onClick={() => setIsDrawerOpen(true)}>
+          <div className="xl:hidden" onClick={() => setIsDrawerOpen(true)}>
             <MenuIcon />
           </div>
           <AnimatePresence>

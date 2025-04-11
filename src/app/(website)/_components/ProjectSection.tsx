@@ -236,7 +236,7 @@ function ProjectCard({ project }: { project: ProjectItemProps }) {
           alt={`Screenshot of ${project.title} project by ${project.author}`}
           fill
           unoptimized={project.img.endsWith(".gif")}
-          className="w-full h-[216.16px] xl:h-full rounded-tr-[6px] rounded-br-[6px] object-[cover,contain]"
+          className="w-full h-[216.16px] xl:h-full rounded-tr-[6px] rounded-br-[6px] object-cover"
           priority
           onError={(e) => {
             const target = e.target as HTMLImageElement

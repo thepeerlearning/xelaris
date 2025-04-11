@@ -16,14 +16,14 @@ export default function Footer() {
     <footer className="w-full min-h-[600px] bg-[#202426] flex justify-center items-center">
       <div className="w-full flex flex-col 2xl:w-[1200px]">
         <div className="w-full h-[108px] py-[22.78px] border-b-[0.2px] border-[#6C6A6B] xl:px-5 2xl:px-0">
-          <div className="w-full px-6 xl:px-0">
+          <div className="w-full px-5 lg:px-6 xl:px-0">
             <WhiteAppLogo />
           </div>
         </div>
-        <div className="w-full flex flex-col justify-center items-center border-b-[0.2px] border-[#6C6A6B] xl:px-5 2xl:px-0">
+        <div className="w-full flex flex-col justify-center items-center border-b-[0.2px] border-[#6C6A6B] lg:px-8 xl:px-5 2xl:px-0">
           <div className="w-full max-w-[1440px] flex flex-col">
-            <div className="w-full max-w-[1200px] min-h-[454px]  grid grid-cols-1 xl:grid-cols-2">
-              <div className="flex flex-col py-0 xl:py-[64px]">
+            <div className="w-full max-w-[1200px] min-h-[454px] grid grid-cols-1 xl:grid-cols-2">
+              <div className="flex flex-col py-0 lg:py-[64px]">
                 <div className="w-[584px] hidden lg:flex gap-[64px] xl:gap-[25px] 2xl:gap-[64px]">
                   <div className="flex flex-col gap-[27px]">
                     <h4 className="font-inter font-normal text-[15px]/[15px] text-[#F7F7EE] tracking-normal align-middle">

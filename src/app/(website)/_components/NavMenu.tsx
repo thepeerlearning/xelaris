@@ -39,8 +39,8 @@ export const menu: {
       },
       {
         title: "School of Blockchain Technology",
-        link: "/schools/software-development",
-        isReady: false,
+        link: "/schools/blockchain-technology",
+        isReady: true,
       },
     ],
   },
@@ -75,15 +75,16 @@ export const menu: {
   },
 ]
 export function NavMenu({ pathname }: { pathname: string }) {
+  console.log("pathname", pathname)
   return (
-    <NavigationMenu className="hidden lg:flex">
+    <NavigationMenu className="hidden xl:flex">
       <NavigationMenuList>
         {menu?.map((item, index) => {
           return (
             <NavigationMenuItem key={`item-${index}`}>
               {item.pages && item.pages.length > 0 ? (
                 <>
-                  <NavigationMenuTrigger className="font-inter font-normal text-[13.34px]">
+                  <NavigationMenuTrigger className="text-[#1F1F1F] text-[13.34px] leading-5 font-inter font-medium tracking-normal align-middle">
                     {item.title}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="bg-[#FBF8E6]  rounded">
@@ -122,7 +123,7 @@ export function NavMenu({ pathname }: { pathname: string }) {
                   passHref
                   className={cn(
                     "text-[#1F1F1F] text-[13.34px] leading-5 font-inter font-medium tracking-normal align-middle hover:underline",
-                    pathname === item.link && "text-primary font-semibold"
+                    pathname.includes(item.link) && "text-primary font-semibold"
                   )}
                 >
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
