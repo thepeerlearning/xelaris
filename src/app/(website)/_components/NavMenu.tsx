@@ -117,19 +117,19 @@ export function NavMenu({ pathname }: { pathname: string }) {
                   </NavigationMenuContent>
                 </>
               ) : (
-                <Link
-                  href={item.link}
-                  legacyBehavior
-                  passHref
+                <div
                   className={cn(
                     "text-[#1F1F1F] text-[13.34px] leading-5 font-inter font-medium tracking-normal align-middle hover:underline",
                     pathname.includes(item.link) && "text-primary font-semibold"
                   )}
                 >
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <NavigationMenuLink
+                    href={item.link}
+                    className={navigationMenuTriggerStyle()}
+                  >
                     {item.title}
                   </NavigationMenuLink>
-                </Link>
+                </div>
               )}
             </NavigationMenuItem>
           )

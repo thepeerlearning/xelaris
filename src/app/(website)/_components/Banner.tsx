@@ -1,5 +1,4 @@
 "use client"
-import { TeamMemberLogo } from "@/components/svgs/team-members"
 import {
   AmazonLogo,
   DuolingoLogo,
@@ -7,7 +6,7 @@ import {
   TeslaLogo,
 } from "@/components/svgs/hero-banner"
 
-import React from "react"
+import Image from "next/image"
 
 export default function Banner() {
   return (
@@ -19,7 +18,13 @@ export default function Banner() {
             <br /> BY EDUCATORS AND EXPERTS FROM
           </p>
           <div className="w-full flex justify-center items-center xl:justify-start xl:items-start">
-            <TeamMemberLogo />
+            <Image
+              src="/team-logos.svg"
+              alt="Team members logo"
+              width={359.56}
+              height={27.55}
+              className="w-auto h-auto"
+            />
           </div>
         </div>
         <div className="w-full xl:w-[592.01px] flex flex-col justify-center items-center gap-[25px]">

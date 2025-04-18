@@ -1,4 +1,4 @@
-export function TeamMemberLogo() {
+export function TeamMemberLogo({ className }: { className?: string }) {
   return (
     <svg
       width="360"
@@ -6,6 +6,7 @@ export function TeamMemberLogo() {
       viewBox="0 0 360 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <path
         d="M6.6535 11.5003L13.307 23.0005H0L6.6535 11.5003Z"

@@ -83,7 +83,7 @@ export function MobileMenu({
       <div className="w-full flex flex-col gap-[12px]">
         <TrialClassButton className="w-full py-[13px]" />
         <Link
-          href="/parent-login"
+          href="/login"
           className="w-full h-[40px] flex justify-center items-center font-inter font-normal text-secondary text-sm leading-[14px] tracking-normal px-4 py-[13px] uppercase border-[0.5px] border-solid border-[#6C6A6B] rounded"
         >
           Parent Login

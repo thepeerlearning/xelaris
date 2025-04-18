@@ -169,3 +169,11 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+/* hide default clock icon for input[type=time] in Chrome */
+input[type="time"].hide-time-icon::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}

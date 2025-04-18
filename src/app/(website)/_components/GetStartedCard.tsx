@@ -3,9 +3,9 @@ import TrialClassButton from "./TrialClassButton"
 
 export default function GetStartedCard() {
   return (
-    <div className="w-full bg-[#202426] relative px-[33.5px] xl:px-[43.5px] py-[64px] xl:py-[117px] flex justify-center items-center">
+    <div className="w-full bg-secondary relative px-[33.5px] xl:px-[43.5px] py-[64px] xl:py-[117px] flex justify-center items-center">
       <div className="w-full max-w-[1196px] h-full rounded bg-[#FBF8E6] flex flex-col lg:flex-row justify-between py-8 px-3 xl:gap-12">
-        <p className="max-w-[556px] h-[176px] text-[#202426] font-inter font-normal text-[38px]/[45px] xl:text-[65px]/[70px] tracking-normal text-left capitalize flex flex-col px-3 place-content-center">
+        <p className="max-w-[556px] h-[176px] text-secondary font-inter font-normal text-[38px]/[45px] xl:text-[65px]/[70px] tracking-normal text-left capitalize flex flex-col px-3 place-content-center">
           <span>Ready to</span>{" "}
           <span className="flex items-center ml-1">
             <BentArrowRight className="w-[47px] h-[28px] lg:w-[57px] lg:h-[57px]" />{" "}

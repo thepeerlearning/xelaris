@@ -2,7 +2,7 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   env: {
-    STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
+    NEXT_PUBLIC_STRIPE_PUBLIC_KEY: process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY,
   },
   images: {
     remotePatterns: [

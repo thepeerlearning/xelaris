@@ -2,7 +2,7 @@
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-h-screen relative bg-[#FBF8E6] pt-24 pb-0 lg:pt-24 lg:pb-12 flex justify-center items-center">
+    <section className="w-full h-full  min-h-screen relative bg-[#FBF8E6] pt-24 pb-16 lg:pt-24 lg:pb-12 flex justify-center items-center">
       <div className="w-full 3xl:w-[1440px] h-full px-2 lg:px-10 3xl:px-[100px]">
         <div className="w-full 2xl:w-[1240px] max-w-[1240px] flex flex-col justify-center items-center gap-6 px-4 lg:px-5">
           <div className="w-full xl:w-[960px] 2xl:w-[1200px] bg-secondary flex flex-col xl:flex-row items-center rounded">

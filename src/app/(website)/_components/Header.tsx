@@ -38,7 +38,7 @@ export const Header: FC = () => {
           <NavMenu pathname={pathname} />
           <div className="sm-w-[280px] xl:w-[338px] h-[40px] hidden xl:flex items-center gap-[12px]">
             <Link
-              href="/parent-login"
+              href="/login"
               className="w-[143px] h-[40px] flex justify-center items-center font-inter font-normal text-secondary text-sm leading-[14px] tracking-normal px-4 py-2 uppercase border-[0.5px] border-solid border-[#FBF8E6]"
             >
               Parent Login

@@ -58,13 +58,13 @@ export default function Footer() {
                       Legal
                     </h4>
                     <Link
-                      href="/legal/privacy"
+                      href="/privacy-policy"
                       className="font-inter font-light text-[#F7F7EE] text-sm/[25px] align-middle tracking-normal"
                     >
                       Privacy
                     </Link>
                     <Link
-                      href="/legal/terms"
+                      href="/terms"
                       className="font-inter font-light text-[#F7F7EE] text-sm/[25px] align-middle tracking-normal"
                     >
                       Terms
@@ -184,13 +184,13 @@ export default function Footer() {
                     </AccordionTrigger>
                     <AccordionContent className="w-full flex flex-col gap-[64px]">
                       <Link
-                        href="/legal/privacy"
+                        href="/privacy"
                         className="font-inter font-light text-[#F7F7EE] text-sm/[25px] align-middle tracking-normal"
                       >
                         Privacy
                       </Link>
                       <Link
-                        href="/legal/terms"
+                        href="/terms"
                         className="font-inter font-light text-[#F7F7EE] text-sm/[25px] align-middle tracking-normal"
                       >
                         Terms

@@ -1,96 +1,88 @@
-import React from "react"
+import Image from "next/image"
 
 export default function CoreValues() {
-  return (
-    <div className="w-full h-[1642px] sm:h-[1484.27px] md:h-[1564.27px] lg:h-[1444.27px] lg-md:h-[1414.27px] xl:h-[1319.25px] 2xl:h-[1079.25px] bg-[#FBF8E6] flex justify-center items-center relative">
-      <div
-        className="block md:hidden w-full h-[96.27px] absolute top-20 md:top-0 left-0 bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(/small-top_core-value_bg.svg)` }}
-      />
-      <div
-        className="block md:hidden w-full h-[96.27px] absolute bottom-0 right-0 bg-no-repeat bg-cover"
-        style={{
-          backgroundImage: `url(/small-bottom_core-value_bg.svg)`,
-        }}
-      />
-      <div
-        className="hidden md:block w-full h-[232.03px] absolute top-0 left-0 bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(/big-top_core-value_bg.svg)` }}
-      />
-      <div
-        className="hidden md:block w-full h-[119.25px] absolute bottom-0 right-0 bg-no-repeat bg-cover"
-        style={{ backgroundImage: `url(/big-bottom_core-value_bg.svg)` }}
-      />
-      <div className="w-full flex justify-center items-center bg-secondary py-8 sm:py-10 md:pt-10 lg:pt-5 md:pb-26 xl:py-18 relative top-10 lg:top-14 xl:top-10">
-        <div className="w-full 3xl:w-[1440px] bg-secondary px-4 md:px-6 lg:px-10 xl:px-[35px] 2xl:px-[48px] 3xl:px-[100px] relative">
-          <div className="max-w-[1245px] mx-auto">
-            <h2 className="w-full font-inter font-normal text-[#ECECEC] text-[30px]/[36px] sm:text-[40px]/[55px] lg:text-[60px]/[96px] tracking-normal align-middle mb-12">
-              Core Values
-            </h2>
+  const values = [
+    {
+      icon: "/innovative.svg",
+      title: "Innovative Mind",
+      description:
+        "We embrace curiosity and creativity to think beyond boundaries and deliver groundbreaking solutions.",
+    },
+    {
+      icon: "/driven-heart.svg",
+      title: "Driven Heart",
+      description:
+        "Passion fuels everything we do. We approach our work with enthusiasm and a commitment to excellence.",
+    },
+    {
+      icon: "/unwavering.svg",
+      title: "Unwavering Integrity",
+      description:
+        "Honesty and accountability are non-negotiable. We hold ourselves to the highest standards in everything we do.",
+    },
+    {
+      icon: "/resilient.svg",
+      title: "Resilient Spirit",
+      description:
+        "Challenges are opportunities for growth. We persevere with determination and adaptability.",
+    },
+    {
+      icon: "/purpose-led.svg",
+      title: "Purpose-Led Impact",
+      description:
+        "We build with intention. Every lesson, every product, every conversation is anchored in the desire to make a difference.",
+    },
+  ]
 
-            <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-[23px] lg:gap-8">
-              {/* Value 1 */}
-              <div className="w-full xl:w-[395px] flex flex-col gap-[10px] lg:gap-6">
-                <h4 className="w-full font-inter font-normal text-[#FBF8E6] text-[24px]/[37.13px] lg:text-[32px]/[35px] xl:text-[30px]/[40px] tracking-normal align-middle uppercase">
-                  Future-First Thinking
-                </h4>
-                <p className="flex flex-col gap-[21px] font-inter font-light text-[#FBF8E6] text-[16px]/[24px] tracking-normal align-middle">
-                  The best way to prepare kids for the future? Introduce them to
-                  the technologies shaping it today. we focus on what&apos;s
-                  transforming. From AI to Web3 and beyond, we&apos;re not just
-                  keeping up - we&apos;re helping kids lead the way.
-                </p>
+  return (
+    <div className="w-full bg-secondary py-10 md:py-16 lg:py-20 xl:pt-[117px] xl:pb-[87px]">
+      <div className="w-full max-w-[1302px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-[35px] 2xl:px-[38px] mb-8 md:mb-12 lg:mb-16">
+        <div className="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-6 md:gap-8 xl:gap-[120px]">
+          <h2 className="font-inter font-normal text-[#FBF8E6] text-[30px]/[36px] sm:text-[40px]/[48px] 2xl:text-[50px]/[72px] tracking-normal">
+            Our Values
+          </h2>
+          <p className="font-inter font-normal text-[#FBF8E6] text-[14.13px]/[22.4px] tracking-normal max-w-[625px]">
+            Our core values are the foundation of who we are and what we strive
+            to achieve. They guide our actions, inspire our creativity, and
+            shape the way we work together as a team.
+          </p>
+        </div>
+      </div>
+
+      {/* Scrollable Cards Section */}
+      <div className="relative w-full px-4 sm:px-6 lg:px-10 xl:px-[35px] 2xl:px-[38px]">
+        {/* Scroll Container */}
+        <div className="w-full overflow-x-auto pb-6 scrollbar-hide">
+          <div className="flex flex-nowrap gap-4 md:gap-5 lg:gap-[13px] min-w-min">
+            {values?.map((item, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 bg-[#FBF8E6] rounded-[12px] flex flex-col justify-between
+                  w-[280px] min-w-[280px] xs:w-[300px] xs:min-w-[300px] sm:w-[320px] sm:min-w-[320px] 
+                  md:w-[350px] md:min-w-[350px] lg:w-[380px] lg:min-w-[380px] xl:w-[416px] xl:min-w-[416px]
+                  h-[380px] sm:h-[400px] md:h-[416px]"
+              >
+                <div className="flex flex-col gap-4 sm:gap-6 md:gap-[50px] p-4 sm:p-5 md:p-6">
+                  <div className="flex justify-center md:justify-start">
+                    <Image
+                      src={item.icon || "/placeholder.svg"}
+                      alt={`${item.title} icon`}
+                      width={120}
+                      height={120}
+                      className="w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] lg:w-[160px] lg:h-[160px] xl:w-[178px] xl:h-[178px] object-contain"
+                    />
+                  </div>
+                  <h4 className="text-[#202426] font-inter font-normal text-[22px]/[28px] sm:text-[24px]/[32px] md:text-[26px]/[40px] lg:text-[28.5px]/[40px] tracking-normal uppercase">
+                    {item.title}
+                  </h4>
+                </div>
+                <div className="py-4 sm:py-5 md:py-[25px] px-4 sm:px-5 md:px-6 border-t-[0.5px] border-[#202426]">
+                  <p className="text-[#202426] font-inter font-normal text-[12px]/[18px] sm:text-[12.47px]/[20px] tracking-normal">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-              {/* Value 2 */}
-              <div className="w-full xl:w-[395px] flex flex-col gap-[10px] lg:gap-6">
-                <h4 className="w-full font-inter font-normal text-[#FBF8E6] text-[24px]/[37.13px] lg:text-[32px]/[35px] xl:text-[30px]/[40px] tracking-normal align-middle uppercase">
-                  Empower Ambition
-                </h4>
-                <p className="flex flex-col gap-[21px] font-inter font-light text-[#FBF8E6] text-[16px]/[28px] tracking-normal align-middle">
-                  We don&apos;t just teach coding or tech skills, we help kids
-                  think big, dream bold, and see themselves as problem-solvers.
-                  Our goal is to inspire them to tackle real-world challenges
-                  and make an impact.
-                </p>
-              </div>
-              {/* Value 3 */}
-              <div className="w-full xl:w-[395px] flex flex-col gap-[10px] lg:gap-6">
-                <h4 className="w-full font-inter font-normal text-[#FBF8E6] text-[24px]/[37.13px] lg:text-[32px]/[35px] xl:text-[30px]/[40px] tracking-normal align-middle uppercase">
-                  Build with Curiosity
-                </h4>
-                <p className="flex flex-col gap-[21px] font-inter font-light text-[#FBF8E6] text-[16px]/[28px] tracking-normal align-middle">
-                  Curiosity isn&apos;t just encouraged; it&apos;s our
-                  superpower. We challenge kids to ask &quot;why,&quot; explore
-                  new ideas, and question the status quo. It&apos;s not about
-                  following a pre-set path. It&apos;s about forging their own,
-                  driven by their unique insights and passions.
-                </p>
-              </div>
-              {/* Value 4 */}
-              <div className="w-full xl:w-[395px] flex flex-col gap-[10px] lg:gap-6">
-                <h4 className="font-inter font-normal text-[#FBF8E6] text-[24px]/[37.13px] lg:text-[32px]/[35px] xl:text-[32.5px]/[40px] tracking-normal align-middle uppercase">
-                  Excellence Through <br /> Experimentation
-                </h4>
-                <p className="flex flex-col gap-[21px] font-inter font-light text-[#FBF8E6] text-[16px]/[28px] tracking-normal align-middle">
-                  Perfection is the enemy of progress. We celebrate
-                  experimentation, creating a safe space where kids can make
-                  mistakes, learn from them, and figure things out along the
-                  way. It&apos;s about progress, not perfection.
-                </p>
-              </div>
-              {/* Value 5 */}
-              <div className="w-full xl:w-[395px] flex flex-col gap-[10px] lg:gap-6">
-                <h4 className="w-full font-inter font-normal text-[#FBF8E6] text-[24px]/[37.13px] lg:text-[32px]/[35px] xl:text-[30px]/[40px] tracking-normal align-middle uppercase">
-                  Community & Mentorship
-                </h4>
-                <p className="flex flex-col gap-[21px] font-inter font-light text-[#FBF8E6] text-[16px]/[28px] tracking-normal align-middle">
-                  No one thrives in isolation. That&apos;s why we&apos;ve built
-                  a vibrant community where kids collaborate, share ideas, and
-                  connect with mentors who believe in their potential. Learning
-                  is a team sport - and we&apos;re all in this together!
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
