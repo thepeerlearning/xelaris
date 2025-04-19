@@ -1,5 +1,6 @@
 "use client"
 
+import { EyevisibilityOffIcon, EyeVisibilityOnIcon } from "@/components/svgs"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import {
@@ -15,7 +16,7 @@ import { resetpassword } from "@/lib/redux/features/auth/authSlice"
 import { useAppDispatch } from "@/lib/redux/hooks"
 import { cn } from "@/lib/utils"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ArrowRight, Eye, EyeOff } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
@@ -131,9 +132,9 @@ export default function ParentInformation() {
                         onClick={togglePasswordVisibility}
                       >
                         {showPassword ? (
-                          <EyeOff className="h-4 w-4" />
+                          <EyevisibilityOffIcon className="h-4 w-4" />
                         ) : (
-                          <Eye className="h-4 w-4" />
+                          <EyeVisibilityOnIcon className="h-4 w-4" />
                         )}
                         <span className="sr-only">
                           {showPassword ? "Hide password" : "Show password"}
@@ -179,9 +180,9 @@ export default function ParentInformation() {
                         onClick={toggleConfirmPasswordVisibility}
                       >
                         {showConfirmPassword ? (
-                          <EyeOff className="h-4 w-4" />
+                          <EyevisibilityOffIcon className="h-4 w-4" />
                         ) : (
-                          <Eye className="h-4 w-4" />
+                          <EyeVisibilityOnIcon className="h-4 w-4" />
                         )}
                         <span className="sr-only">
                           {showConfirmPassword

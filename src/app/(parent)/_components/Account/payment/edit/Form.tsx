@@ -85,39 +85,39 @@ export default function CheckoutForm() {
       <div className="w-full flex gap-2">
         <div className="w-2/3 relative flex flex-col gap-1">
           <label
-            className="text-secondary text-sm font-normal font-arial tracking-[0.6000000238418579px] text-left disabled:text-[#98A2B3]"
+            className="text-secondary text-sm font-normal font-inter tracking-[0.6000000238418579px] text-left disabled:text-[#98A2B3]"
             htmlFor="expiry"
           >
             Card number
           </label>
           <CardNumberElement
             options={cardElementOptions}
-            className={`w-full bg-white px-[18px] py-2 h-[40px] border border-solid border-border font-arial text-[16px]/[24px] font-normal cursor-text text-[#667085] hover:border-solid hover:border-b-0 hover:shadow-[0px_2px_0px_0px_#E4F222] hover:border-[#E4E5FC] focus:outline-none focus:border-solid focus:border-b-0 focus:border-[#E4E5FC] focus:shadow-[0px_2px_0px_0px_#E4F222] disabled:bg-[#E1E1E1] disabled:text-[#667085] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed placeholder:text-[#98A2B3] placeholder:text-[15px]/[17.5px]`}
+            className={`w-full bg-white px-[18px] py-2 h-[40px] border border-solid border-border font-inter text-[16px]/[24px] font-normal cursor-text text-[#667085] hover:border-solid hover:border-b-0 hover:shadow-[0px_2px_0px_0px_#E4F222] hover:border-[#E4E5FC] focus:outline-none focus:border-solid focus:border-b-0 focus:border-[#E4E5FC] focus:shadow-[0px_2px_0px_0px_#E4F222] disabled:bg-[#E1E1E1] disabled:text-[#667085] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed placeholder:text-[#98A2B3] placeholder:text-[15px]/[17.5px]`}
           />
         </div>
         <div className="w-1/3 flex gap-2">
           <div className="w-1/2 relative flex flex-col gap-1">
             <label
-              className="text-secondary text-sm font-normal font-arial tracking-[0.6000000238418579px] text-left disabled:text-[#98A2B3]"
+              className="text-secondary text-sm font-normal font-inter tracking-[0.6000000238418579px] text-left disabled:text-[#98A2B3]"
               htmlFor="expiry"
             >
               Expiry
             </label>
             <CardExpiryElement
               options={cardElementOptions}
-              className={`w-full bg-white px-[18px] py-2 h-[40px] border border-solid border-border font-arial text-[16px]/[24px] font-normal cursor-text text-[#667085] hover:border-solid hover:border-b-0 hover:shadow-[0px_2px_0px_0px_#E4F222] hover:border-[#E4E5FC] focus:outline-none focus:border-solid focus:border-b-0 focus:border-[#E4E5FC] focus:shadow-[0px_2px_0px_0px_#E4F222] disabled:bg-[#E1E1E1] disabled:text-[#667085] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed placeholder:text-[#98A2B3] placeholder:text-[15px]/[17.5px]`}
+              className={`w-full bg-white px-[18px] py-2 h-[40px] border border-solid border-border font-inter text-[16px]/[24px] font-normal cursor-text text-[#667085] hover:border-solid hover:border-b-0 hover:shadow-[0px_2px_0px_0px_#E4F222] hover:border-[#E4E5FC] focus:outline-none focus:border-solid focus:border-b-0 focus:border-[#E4E5FC] focus:shadow-[0px_2px_0px_0px_#E4F222] disabled:bg-[#E1E1E1] disabled:text-[#667085] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed placeholder:text-[#98A2B3] placeholder:text-[15px]/[17.5px]`}
             />
           </div>
           <div className="w-1/2 relative flex flex-col gap-1">
             <label
-              className="text-secondary text-sm font-normal font-arial tracking-[0.6000000238418579px] text-left disabled:text-[#98A2B3]"
+              className="text-secondary text-sm font-normal font-inter tracking-[0.6000000238418579px] text-left disabled:text-[#98A2B3]"
               htmlFor="expiry"
             >
               CVV
             </label>
             <CardCvcElement
               options={cardElementOptions}
-              className={`w-full bg-white px-[18px] py-2 h-[40px] border border-solid border-border font-arial text-[16px]/[24px] font-normal cursor-text text-[#667085] hover:border-solid hover:border-b-0 hover:shadow-[0px_2px_0px_0px_#E4F222] hover:border-[#E4E5FC] focus:outline-none focus:border-solid focus:border-b-0 focus:border-[#E4E5FC] focus:shadow-[0px_2px_0px_0px_#E4F222] disabled:bg-[#E1E1E1] disabled:text-[#667085] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed placeholder:text-[#98A2B3] placeholder:text-[15px]/[17.5px]`}
+              className={`w-full bg-white px-[18px] py-2 h-[40px] border border-solid border-border font-inter text-[16px]/[24px] font-normal cursor-text text-[#667085] hover:border-solid hover:border-b-0 hover:shadow-[0px_2px_0px_0px_#E4F222] hover:border-[#E4E5FC] focus:outline-none focus:border-solid focus:border-b-0 focus:border-[#E4E5FC] focus:shadow-[0px_2px_0px_0px_#E4F222] disabled:bg-[#E1E1E1] disabled:text-[#667085] disabled:hover:border-[#F5F5F5] disabled:cursor-not-allowed placeholder:text-[#98A2B3] placeholder:text-[15px]/[17.5px]`}
             />
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function CheckoutForm() {
       {message && (
         <div
           id="payment-message"
-          className="font-normal font-arial text-center text-sm text-primary -tracking-[1.2px] my-[20px]"
+          className="font-normal font-inter text-center text-sm text-primary -tracking-[1.2px] my-[20px]"
         >
           {message}
         </div>

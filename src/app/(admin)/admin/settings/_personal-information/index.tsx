@@ -11,7 +11,7 @@ import {
   FormLabel,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { changeParentPassword } from "@/lib/redux"
+import { changeAdminPassword } from "@/lib/redux"
 import { useAppDispatch } from "@/lib/redux/hooks"
 import { cn } from "@/lib/utils"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -21,6 +21,9 @@ import * as z from "zod"
 
 const infoSchema = z
   .object({
+    oldPassword: z
+      .string({ required_error: "Please enter your old password" })
+      .min(8, "Password must be at least 8 characters"),
     password: z
       .string({ required_error: "Please enter a password" })
       .min(8, "Password must be at least 8 characters"),
@@ -38,6 +41,7 @@ type infoValues = z.infer<typeof infoSchema>
 
 export function ChangePassword() {
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showOldPassword, setShowOldPassword] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const dispatch = useAppDispatch()
@@ -46,6 +50,7 @@ export function ChangePassword() {
   const form = useForm<infoValues>({
     resolver: zodResolver(infoSchema),
     defaultValues: {
+      oldPassword: "",
       password: "",
       confirmPassword: "",
     },
@@ -57,14 +62,15 @@ export function ChangePassword() {
 
   // Handle form submission
   function onSubmit(values: infoValues) {
-    const { confirmPassword, password } = values
+    const { confirmPassword, password, oldPassword } = values
     const inputData = {
+      old_password: oldPassword?.trim(),
       password: password?.trim(),
       confirmPassword: confirmPassword?.trim(),
     }
 
     setIsSubmitting(true)
-    dispatch(changeParentPassword({ inputData }))
+    dispatch(changeAdminPassword({ inputData }))
       .unwrap()
       .then(() => {
         setIsSubmitting(false)
@@ -72,6 +78,9 @@ export function ChangePassword() {
       .catch(() => {
         setIsSubmitting(false)
       })
+  }
+  const toggleOldPasswordVisibility = () => {
+    setShowOldPassword(!showPassword)
   }
 
   const togglePasswordVisibility = () => {
@@ -92,10 +101,57 @@ export function ChangePassword() {
         >
           <FormField
             control={form.control}
+            name="oldPassword"
+            render={({ field, fieldState }) => (
+              <FormItem>
+                <FormLabel htmlFor="oldPassword">Old password</FormLabel>
+
+                <FormControl>
+                  <div className="relative">
+                    <Input
+                      id="oldPassword"
+                      type={showOldPassword ? "text" : "password"}
+                      placeholder="••••••••"
+                      className={cn(
+                        "pr-10",
+                        fieldState.error &&
+                          "border-[#E23353] focus-visible:ring-[#E23353]"
+                      )}
+                      {...field}
+                    />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="icon"
+                      className="absolute right-1 top-0 h-full px-3 py-2 text-[#404452] hover:bg-transparent hover:text-[#404452] cursor-pointer"
+                      onClick={toggleOldPasswordVisibility}
+                    >
+                      {showOldPassword ? (
+                        <EyevisibilityOffIcon className="h-4 w-4" />
+                      ) : (
+                        <EyeVisibilityOnIcon className="h-4 w-4" />
+                      )}
+                      <span className="sr-only">
+                        {showOldPassword ? "Hide password" : "Show password"}
+                      </span>
+                    </Button>
+                  </div>
+                </FormControl>
+
+                {fieldState.error && (
+                  <ErrorMessage>{fieldState.error.message}</ErrorMessage>
+                )}
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
             name="password"
             render={({ field, fieldState }) => (
               <FormItem>
-                <FormLabel htmlFor="password">New password</FormLabel>
+                <div className="w-full h-[14px] flex justify-between items-center">
+                  <FormLabel htmlFor="password">New password</FormLabel>
+                </div>
 
                 <FormControl>
                   <div className="relative">

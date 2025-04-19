@@ -773,7 +773,7 @@ export default function NoData({ message }: NodataProps) {
           fill="#98A2B3"
         />
       </svg>
-      <p className="font-bold font-arial text-xl text-center text-dark">
+      <p className="font-bold font-inter text-xl text-center text-dark">
         {message ? message : "No data available"}
       </p>
     </div>

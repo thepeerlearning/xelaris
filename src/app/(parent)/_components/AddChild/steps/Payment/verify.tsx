@@ -35,7 +35,7 @@ export default function VerifyAddChildPayment({ token }: { token: string }) {
         <div className="w-full flex items-center flex-col gap-6 py-12">
           <SuccessIcon />
           <div className="w-full flex flex-col gap-4 justify-center items-center">
-            <h4 className="w-full md:w-[382px] text-secondary font-arial font-normal text-[30px]/[34px] text-center">
+            <h4 className="w-full md:w-[382px] text-secondary font-inter font-normal text-[30px]/[34px] text-center">
               Success! Your child&apos;s class is scheduled and added to your
               calendar.
             </h4>
