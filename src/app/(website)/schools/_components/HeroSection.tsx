@@ -1,5 +1,5 @@
 "use client"
-import Image from "next/image"
+import { SignupForm } from "@/app/(signup)/_components/Form"
 import TrialClassButton from "../../_components/TrialClassButton"
 
 interface SchoolProps {
@@ -12,7 +12,7 @@ export default function HeroSection({
   ageRange,
   school,
   description,
-  required = true,
+  required = false,
 }: SchoolProps) {
   return (
     <section
@@ -20,13 +20,13 @@ export default function HeroSection({
       style={{ backgroundImage: `url(/images/school_lg-hero_img.jpeg)` }}
     >
       <div className="w-full h-full flex justify-center items-center px-4 sm:px-6 md:px-8 lg:px-10 xl:pl-8 xl:pr-0 2xl:pl-10 2xl:pr-0 3xl:px-0">
-        <div className="w-full h-full max-w-[1234px] flex flex-col xl:flex-row items-center gap-10 xl:gap-[50px] 2xl:gap-[151px] pt-30 pb-12  xl:pt-24">
+        <div className="w-full h-full max-w-[1234px] flex flex-col xl:flex-row items-center gap-10 xl:gap-[50px] 2xl:gap-[114px] pt-30 pb-12  xl:pt-24">
           {/* Left Section */}
           <div className="flex-1 max-w-[540px] flex flex-col gap-6 justify-center items-start text-left">
             <div className="w-full flex flex-col gap-3">
               <div className="w-full flex flex-col gap-[12px]">
                 {required && (
-                  <span className="w-[214px] h-[30px] rounded bg-primary font-normal font-inter uppercase text-[16px]/[8px] text-[#F7F7EE] align-middle flex justify-center items-center">
+                  <span className="w-[214px] h-[30px] rounded bg-primary font-normal font-inter uppercase text-[16px]/[8px] text-[#FBF8E6] align-middle flex justify-center items-center">
                     prerequisite required
                   </span>
                 )}
@@ -34,7 +34,7 @@ export default function HeroSection({
                   AGES {ageRange} | 1-on-1 online
                 </span>
               </div>
-              <h1 className="font-inter font-normal text-[36px]/[37.8px] md:text-3xl lg:text-4xl xl:text-4xl/[35px] 2xl:text-[58px]/[58.8px] text-[#FBF8E6]">
+              <h1 className="font-inter font-normal text-[36px]/[37.8px] md:text-3xl lg:text-4xl xl:text-4xl/[35px] 2xl:text-[56px]/[58.8px] text-[#FBF8E6]">
                 {school}
               </h1>
             </div>
@@ -47,14 +47,8 @@ export default function HeroSection({
           </div>
 
           {/* Right Section - Hero Image */}
-          <div className="hidden xl:flex">
-            <Image
-              src="/images/lg_hero-right_img.svg"
-              alt="signup form image"
-              width={542}
-              height={753}
-              className="w-full h-auto max-w-[542px] xl:h-[753px] object-contain"
-            />
+          <div className="hidden xl:flex w-full h-full xl:w-[542px]">
+            <SignupForm />
           </div>
         </div>
       </div>

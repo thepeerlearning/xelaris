@@ -1,9 +1,11 @@
 import Image from "next/image"
 import TrialClassButton from "./TrialClassButton"
+import Link from "next/link"
 
 interface SchoolProps {
   id: number
   age: string
+  link: string
   prerequisite: boolean
   title: string
   img: string
@@ -15,6 +17,7 @@ const schools: SchoolProps[] = [
     prerequisite: false,
     title: "School Of Software Development",
     img: "/images/school_card-img_1.webp",
+    link: "/schools/software-development",
   },
   {
     id: 2,
@@ -22,6 +25,7 @@ const schools: SchoolProps[] = [
     prerequisite: false,
     title: "School Of Product Design",
     img: "/images/school_card-img_2.webp",
+    link: "/schools/product-design",
   },
   {
     id: 3,
@@ -29,6 +33,7 @@ const schools: SchoolProps[] = [
     prerequisite: true,
     title: "School Of Artificial Intelligence",
     img: "/images/school_card-img_3.webp",
+    link: "/schools/artificial-intelligence",
   },
   {
     id: 4,
@@ -36,6 +41,7 @@ const schools: SchoolProps[] = [
     prerequisite: true,
     title: "School Of Blockchain Technology",
     img: "/images/school_card-img_4.webp",
+    link: "/schools/blockchain-technology",
   },
 ]
 export default function SchoolSection() {
@@ -47,12 +53,13 @@ export default function SchoolSection() {
         </h2>
         <div className="w-full 2xl:w-[912px] grid grid-cols-1 lg:grid-cols-2 gap-[21px] px-3 lg:px-4 xl:px-0 relative">
           {schools?.map((school) => (
-            <div
+            <Link
+              href={school.link}
               key={school.id}
-              className="w-full xl:w-[440px] rounded-xl border border-solid border-[#DFE5E6] overflow-hidden bg-[#FBF8E6]"
+              className="w-full xl:w-[440px] rounded-xl border border-solid border-[#DFE5E6] overflow-hidden bg-[#FBF8E6] cursor-pointer"
             >
               {/* Image Section */}
-              <div className="relative h-40 w-full hover:scale-[1.05] cursor-pointer transform transition-all duration-300">
+              <div className="relative h-40 w-full hover:scale-[1.05]  transform transition-all duration-300">
                 <Image
                   height={160}
                   width={440}
@@ -94,9 +101,9 @@ export default function SchoolSection() {
               </div>
               {/* Action Section */}
               <div className="w-full px-6 py-4 h-[78px]">
-                <TrialClassButton className="w-full" />
+                <TrialClassButton className="w-full hover:bg-[#DFE5E6] hover:border-[#DFE5E6] cursor-pointer" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

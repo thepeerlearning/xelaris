@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
@@ -119,6 +119,32 @@ export function PersonalInfoStep({ nextStep }: PersonalInfoStepProps) {
   const { formState } = form
   const { isValid } = formState
 
+  // Get suggested countries first, then sort the rest alphabetically
+  const sortedCountries = [...countries].sort((a, b) => {
+    if (a.suggested && !b.suggested) return -1
+    if (!a.suggested && b.suggested) return 1
+    return a.label.localeCompare(b.label)
+  })
+
+  // Watch for changes to the countryCode field
+  const selectedCountryCode = form.watch("countryCode")
+  const selectedCountryPhone = selectedCountryCode
+    ? countries.find((c) => c.code === selectedCountryCode)?.phone || ""
+    : ""
+  // Use React.useEffect to update the phone number when country changes
+  useEffect(() => {
+    if (selectedCountryCode) {
+      const currentPhoneNumber = form.getValues("phoneNumber")
+      // Only prefill if the field is empty or doesn't start with the country code
+      if (
+        !currentPhoneNumber ||
+        !currentPhoneNumber.startsWith(selectedCountryPhone)
+      ) {
+        form.setValue("phoneNumber", selectedCountryPhone)
+      }
+    }
+  }, [selectedCountryCode, selectedCountryPhone, form])
+
   // Handle form submission
   function onSubmit(values: PersonalInfoValues) {
     const {
@@ -130,10 +156,7 @@ export function PersonalInfoStep({ nextStep }: PersonalInfoStepProps) {
       countryCode,
     } = values
     const country = countries.find((c) => c.code === countryCode)!
-    const fullPhoneNumber = `+${country.phone}${phoneNumber}`.replace(
-      /\s+/g,
-      ""
-    )
+    const fullPhoneNumber = `${country.phone}${phoneNumber}`.replace(/\s+/g, "")
     const inputData = {
       child_full_name: childFullName,
       parent_full_name: parentFullName,
@@ -242,7 +265,7 @@ export function PersonalInfoStep({ nextStep }: PersonalInfoStepProps) {
           <div>
             <Label htmlFor="phone">Phone Number</Label>
             <div className="mt-1 flex flex-col gap-[2px] w-full">
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="countryCode"
                 render={({ field }) => (
@@ -266,6 +289,79 @@ export function PersonalInfoStep({ nextStep }: PersonalInfoStepProps) {
                         </SelectContent>
                       </Select>
                     </div>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phoneNumber"
+                render={({ field, fieldState }) => (
+                  <FormItem className="w-full">
+                    <FormControl>
+                      <Input
+                        id="phoneNumber"
+                        type="tel"
+                        placeholder="123-456-7890"
+                        className={cn(
+                          "w-full",
+                          fieldState.error &&
+                            "border-[#E23353] focus-visible:ring-[#E23353]"
+                        )}
+                        {...field}
+                      />
+                    </FormControl>
+                    {fieldState.error && (
+                      <ErrorMessage>{fieldState.error.message}</ErrorMessage>
+                    )}
+                  </FormItem>
+                )}
+              /> */}
+              <FormField
+                control={form.control}
+                name="countryCode"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <div className="relative">
+                      <Select
+                        onValueChange={(value) => {
+                          field.onChange(value)
+                          // Get the selected country's phone code
+                          const country = countries.find(
+                            (c) => c.code === value
+                          )
+                          if (country) {
+                            // Update the phone number field with the country code
+                            const currentPhone =
+                              form.getValues("phoneNumber") || ""
+                            if (
+                              !currentPhone ||
+                              !currentPhone.startsWith(country.phone)
+                            ) {
+                              form.setValue("phoneNumber", country.phone)
+                            }
+                          }
+                        }}
+                        value={field.value || ""}
+                      >
+                        <FormControl>
+                          <SelectTrigger>
+                            <SelectValue placeholder="Select country" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent className="max-h-[300px] overflow-y-auto">
+                          {sortedCountries.map((country, index) => (
+                            <SelectItem key={index} value={country.code}>
+                              {country.label} ({country.phone})
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    {form.formState.errors.countryCode && (
+                      <ErrorMessage>
+                        {form.formState.errors.countryCode.message}
+                      </ErrorMessage>
+                    )}
                   </FormItem>
                 )}
               />

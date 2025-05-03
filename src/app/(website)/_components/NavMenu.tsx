@@ -9,13 +9,16 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
-import Link from "next/link"
+// import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { ArrowRight } from "lucide-react"
+import Image from "next/image"
+import * as React from "react"
 
 export const menu: {
   title: string
 
-  pages?: { title: string; link: string; isReady: boolean }[]
+  pages?: { title: string; link: string; icon?: string; isReady: boolean }[]
   link: string
 }[] = [
   {
@@ -25,21 +28,26 @@ export const menu: {
       {
         title: "School of Software Development",
         link: "/schools/software-development",
+        icon: "/school-logo_soft.svg",
+        isReady: true,
+      },
+
+      {
+        title: "School of Artificial Intelligence",
+        link: "/schools/artificial-intelligence",
+        icon: "/school-logo_artintl.svg",
         isReady: true,
       },
       {
         title: "School of Product Design",
         link: "/schools/product-design",
-        isReady: true,
-      },
-      {
-        title: "School of Artificial Intelligence",
-        link: "/schools/artificial-intelligence",
+        icon: "/school-logo_prod.svg",
         isReady: true,
       },
       {
         title: "School of Blockchain Technology",
         link: "/schools/blockchain-technology",
+        icon: "/school-logo_blkchn.svg",
         isReady: true,
       },
     ],
@@ -51,17 +59,14 @@ export const menu: {
       {
         title: "About Xelaris",
         link: "/company/about-us",
+        icon: "/about-us.svg",
         isReady: true,
       },
       {
         title: "Career at Xelaris",
         link: "/company/careers",
-        isReady: true,
-      },
-      {
-        title: "Contact Us",
-        link: "/company/contact",
-        isReady: true,
+        icon: "/contact-us.svg",
+        isReady: false,
       },
     ],
   },
@@ -69,13 +74,12 @@ export const menu: {
     title: "Pricing",
     link: "/pricing",
   },
-  {
-    title: "Internship",
-    link: "/internship",
-  },
+  // {
+  //   title: "Internship",
+  //   link: "/internship",
+  // },
 ]
 export function NavMenu({ pathname }: { pathname: string }) {
-  console.log("pathname", pathname)
   return (
     <NavigationMenu className="hidden xl:flex">
       <NavigationMenuList>
@@ -87,33 +91,30 @@ export function NavMenu({ pathname }: { pathname: string }) {
                   <NavigationMenuTrigger className="text-[#1F1F1F] text-[13.34px] leading-5 font-inter font-medium tracking-normal align-middle">
                     {item.title}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-[#FBF8E6]  rounded">
-                    {item.pages?.map((page, idx) => {
-                      return (
-                        <div
-                          key={`page-${idx}`}
-                          className="min-w-[300px] py-1 w-max grid gap-1 grid-cols-1"
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg-md:w-[717px]">
+                      {item.pages?.map((item, index) => (
+                        <span
+                          key={index}
+                          className={`w-[292px] flex gap-[15px] items-center py-[15px] px-[20px] rounded-[20px] justify-between bg-transparent hover:bg-[#FBF8E6] hover:text-[#202426] text-[#FBF8E6] cursor-pointer transition-all duration-300`}
                         >
-                          <Link
-                            href={page.link}
-                            className={cn(
-                              "font-normal font-inter text-secondary text-sm capitalize block px-4 py-2 hover:text-primary cursor-pointer rounded-[6px]",
-                              !page.isReady &&
-                                "cursor-not-allowed hover:text-secondary opacity-50",
-                              pathname === page.link &&
-                                "text-primary font-semibold"
-                            )}
-                          >
-                            {page.title}{" "}
-                            {!page.isReady && (
-                              <span className="px-0.5  text-xs font-bold text-red-500">
-                                Coming Soon
-                              </span>
-                            )}
-                          </Link>
-                        </div>
-                      )
-                    })}
+                          <span className="w-full flex gap-[15px] justify-between">
+                            <Image
+                              src={item.icon || ""}
+                              alt="school logo"
+                              width={12}
+                              height={12}
+                              className="w-auto h-auto"
+                            />
+                            <span className="w-full font-inter font-semibold  text-[15px]/[100%] -tracking-[1%] align-middle">
+                              {item.title}
+                            </span>
+                          </span>
+
+                          <ArrowRight className="shrink-0 text-primary" />
+                        </span>
+                      ))}
+                    </ul>
                   </NavigationMenuContent>
                 </>
               ) : (

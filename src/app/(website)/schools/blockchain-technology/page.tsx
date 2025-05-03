@@ -9,7 +9,7 @@ export default function SchoolOfSoftwareDevelopment() {
       <HeroSection
         ageRange="15-17"
         school="Web3 developer beginner"
-        description={`This Web3 Beginner course introduces students to blockchain technology from the ground up. Students will explore the Ethereum blockchain and Decentralized Finance (DeFi). They will gain hands-on experience building decentralized applications (dApps) with Solidity and smart contracts. By the end of the course, they will have the skills to create and deploy Web3 applications, preparing them for a career as a Blockchain Engineer.`}
+        description={`This Web3 Beginner course introduces students to blockchain technology from the ground up. Students will explore the Ethereum blockchain and Decentralized Finance (DeFi). They will gain hands-on experience building decentralized applications (dApps) with Solidity and smart contracts.`}
       />
       <Banner />
       <CourseDescription />

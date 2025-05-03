@@ -20,7 +20,7 @@ import { questions, testimonies } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import * as AccordionPrimitive from "@radix-ui/react-accordion"
 import Autoplay from "embla-carousel-autoplay"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, PlusIcon } from "lucide-react"
 import { useCallback, useEffect, useRef, useState } from "react"
 // Custom Accordion components
 const Accordion = AccordionPrimitive.Root
@@ -91,34 +91,6 @@ const icons = [
   "/excalidraw.svg",
   "/material-design.svg",
 ]
-const pricing = [
-  {
-    amount: 200,
-    description: `45-minute private lesson once a week 
-with an experienced Instructor.`,
-  },
-  {
-    amount: 250,
-    description: `1-hour private lesson once a week 
-with an experienced Instructor.`,
-  },
-  {
-    amount: 300,
-    description: `45-minute private lesson twice a week 
-with an experienced Instructor.`,
-  },
-  {
-    amount: 400,
-    description: `1-hour private lesson twice a week 
-with an experienced Instructor.`,
-  },
-]
-const included = [
-  "Classes tailored to your child's pace and learning style.",
-  "Detailed report after each class on what was taught.",
-  "Easily reschedule your child's class time whenever needed.",
-  "24/7 support for parents and students.",
-]
 
 export default function CourseDescription() {
   // Calculate the number of rows in the grid
@@ -158,6 +130,27 @@ export default function CourseDescription() {
     },
     [api]
   )
+  const SECTION_IDS = ["introduction", "xelaris", "learn", "review", "faq"]
+  function useActiveSection(ids: string[]) {
+    const [active, setActive] = useState<string>("")
+    useEffect(() => {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) setActive(e.target.id)
+          })
+        },
+        { threshold: 0.5, rootMargin: "0px 0px -50% 0px" }
+      )
+      ids.forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) io.observe(el)
+      })
+      return () => io.disconnect()
+    }, [ids])
+    return active
+  }
+  const activeId = useActiveSection(SECTION_IDS)
 
   const introduction = (
     <div
@@ -277,10 +270,10 @@ export default function CourseDescription() {
         <div className="w-ful xl:h-[386.63px] flex flex-col xl:flex-row">
           <div className="w-full xl:w-[248px] h-full p-6 rounded-tr rounded-br bg-primary">
             <p className="font-inter font-normal text-[18px]/[27px] text-[#FBF8E6] -tracking-[0.66px] align-middle">
-              All our classes are flexible, personalized, and guided by
-              experienced software engineers. Your child will practice hands-on,
-              build real-world projects, and receive 1-on-1 support all on a
-              schedule that works best for them.
+              We carefully select our instructors—only the top 2% of applicants
+              make the cut. That means your child learns from coding experts who
+              aren&apos;t just technically brilliant but also passionate about
+              teaching and inspiring young learners.
             </p>
           </div>
           <div className="w-full h-full xl:w-[579.94px]">
@@ -393,68 +386,7 @@ export default function CourseDescription() {
       </div>
     </div>
   )
-  const schoolPricing = (
-    <div
-      id="pricing"
-      className="w-full min-h-[828px] rounded-[6px] py-[64px] px-5 lg:px-10 2xl:p-[64px] bg-secondary overflow-hidden"
-    >
-      <div className="w-full flex flex-col gap-[30px] lg:gap-[58px]">
-        <h2 className="w-full h-[85px] pb-[49px] border-b border-[#6C6A6B] font-inter font-normal text-[#FBF8E6] text-[28px]/[28px] -tracking-[0.84px] align-middle">
-          Pricing
-        </h2>
-        <p className="w-full font-inter font-normal text-[#A2A2A2] text-[18px]/[27.6px] -tracking-[0.66px] flex flex-col gap-4">
-          Our goal is to provide the finest online tech education available.
-          When you enrol your child, their tuition includes much more than just
-          the standard class experience.
-        </p>
-        <div className="w-full grid grid-cols-1 lg-md:grid-cols-2 gap-6">
-          {/* Card 1 */}
-          {pricing?.map(
-            (
-              item: {
-                amount: number
-                description: string
-              },
-              index: number
-            ) => (
-              <div
-                key={index}
-                className="flex flex-col gap-2 bg-[#FBF8E6] pt-[30px] pb-10 pr-10 pl-6"
-              >
-                <div className="flex gap-2">
-                  <span className="w-[10px] h-[5px] bg-primary shrink-0"></span>
-                  <div className="flex flex-col -mt-2.5">
-                    <h4 className="font-semibold font-inter text-[20px]/[29px] text-secondary -tracking-[0.28px] align-middle">
-                      ${item.amount}/month
-                    </h4>
-                    <p className="font-normal font-inter text-[16px]/[23px] text-secondary -tracking-[0.28px] align-middle">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            )
-          )}
-        </div>
-        <div className="w-full flex flex-col gap-6">
-          <h4 className="w-full font-inter font-normal text-[#A2A2A2] text-[18px]/[24px] tracking-normal align-middle">
-            Whats Included
-          </h4>
 
-          <div className="w-full flex flex-col gap-4">
-            {included?.map((item, index) => (
-              <div key={index} className="flex gap-2 items-center">
-                <span className="bg-primary w-[14px] h-[7px]"></span>
-                <p className="font-inter font-normal text-[17.44px]/[25.2px] text-[#A2A2A2] -tracking-[0.54px] align-middle">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
   const reviews = (
     <div
       id="review"
@@ -602,42 +534,60 @@ export default function CourseDescription() {
     <div className="w-full flex justify-center items-center relative pt-[64px] bg-[#FBF8E6]">
       <div className="max-w-[1297px] flex flex-col 2xl:flex-row gap-[30px] lg:gap-[58px]">
         {/* Menu */}
-        <div className="w-full px-5 lg:pl-8 lg:pr-1 2xl:px-0 2xl:max-w-[280px] h-[371.32px] pb-[32px] flex flex-col gap-4">
+        <div className="w-full bg-secondary 2xl:bg-transparent pt-[20px] pb-[32px] px-5 lg:pl-8 lg:pr-1 2xl:px-0 2xl:w-[280px] h-[371.32px] 2xl:pb-[32px] flex flex-col gap-4 sticky top-0 2xl:-left-50 z-1">
           <Link
             href="#introduction"
-            className="bg-secondary w-full h-[42px] rounded-[6px] pt-3 text-[#FBF8E6] font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3"
+            className={`${
+              activeId === "introduction"
+                ? "bg-secondary text-[#FBF8E6]"
+                : "text-[#FBF8E6] 2xl:text-secondary"
+            }  w-full h-[42px] 2xl:rounded-[6px] 2xl:border-b 2xl:border-[#FBF8E6] 2xl:border-none pt-3  font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3 flex justify-between items-center`}
           >
-            Introduction
+            Introduction{" "}
+            <PlusIcon className="flex xl:hidden h-4 w-4 text-[#FBF8E6]" />
           </Link>
           <Link
             href="#xelaris"
-            className="w-full h-[42px] rounded-[6px] pt-3 text-secondary font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3"
+            className={`${
+              activeId === "xelaris"
+                ? "bg-secondary text-[#FBF8E6]"
+                : "text-[#FBF8E6] 2xl:text-secondary"
+            }  w-full h-[42px] 2xl:rounded-[6px] 2xl:border-b 2xl:border-[#FBF8E6] 2xl:border-none pt-3  font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3 flex justify-between items-center`}
           >
-            Why Xelaris
+            Why Xelaris{" "}
+            <PlusIcon className="flex xl:hidden h-4 w-4 text-[#FBF8E6]" />
           </Link>
           <Link
             href="#learn"
-            className="w-full h-[42px] rounded-[6px] pt-3 text-secondary font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3"
+            className={`${
+              activeId === "learn"
+                ? "bg-secondary text-[#FBF8E6]"
+                : "text-[#FBF8E6] 2xl:text-secondary"
+            }  w-full h-[42px] 2xl:rounded-[6px] 2xl:border-b 2xl:border-[#FBF8E6] 2xl:border-none pt-3  font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3 flex justify-between items-center`}
           >
-            What you&apos;ll learn
-          </Link>
-          <Link
-            href="#pricing"
-            className="w-full h-[42px] rounded-[6px] pt-3 text-secondary font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3"
-          >
-            Pricing
+            What you&apos;ll learn{" "}
+            <PlusIcon className="flex xl:hidden h-4 w-4 text-[#FBF8E6]" />
           </Link>
           <Link
             href="#review"
-            className="w-full h-[42px] rounded-[6px] pt-3 text-secondary font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3"
+            className={`${
+              activeId === "review"
+                ? "bg-secondary text-[#FBF8E6]"
+                : "text-[#FBF8E6] 2xl:text-secondary"
+            }  w-full h-[42px] 2xl:rounded-[6px] 2xl:border-b 2xl:border-[#FBF8E6] 2xl:border-none pt-3  font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3 flex justify-between items-center`}
           >
-            Review
+            Review{" "}
+            <PlusIcon className="flex xl:hidden h-4 w-4 text-[#FBF8E6]" />
           </Link>
           <Link
             href="#faq"
-            className="w-full h-[42px] rounded-[6px] pt-3 text-secondary font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3"
+            className={`${
+              activeId === "faq"
+                ? "bg-secondary text-[#FBF8E6]"
+                : "text-[#FBF8E6] 2xl:text-secondary"
+            }  w-full h-[42px] 2xl:rounded-[6px] 2xl:border-b 2xl:border-[#FBF8E6] 2xl:border-none pt-3  font-inter font-normal text-[13.78px]/[17.64px] -tracking-[0.28px] align-middle p-3 flex justify-between items-center`}
           >
-            FAQ
+            FAQ <PlusIcon className="flex xl:hidden h-4 w-4 text-[#FBF8E6]" />
           </Link>
         </div>
         <div className="w-full min-h-full max-w-[996px] px-4 2xl:pr-0 2xl:pl-10 ">
@@ -648,8 +598,7 @@ export default function CourseDescription() {
             {xelaris}
             {/* Learn */}
             {whyXelaris}
-            {/* Pricing */}
-            {schoolPricing}
+
             {/* Review */}
             {reviews}
             {/* FAQ */}

@@ -2,6 +2,7 @@ import Banner from "./_components/Banner"
 import FAQsSection from "./_components/Faqs"
 import GetStartedCard from "./_components/GetStartedCard"
 import HeroSection from "./_components/HeroSection"
+import MediaCard from "./_components/Media"
 import ProjectSection from "./_components/ProjectSection"
 import SchoolSection from "./_components/SchoolSection"
 import StudentShowCase from "./_components/StudentShowCase"
@@ -18,6 +19,7 @@ export default function Home() {
       <StudentShowCase />
       <TestimoniesSection />
       <WhyXelarisSection />
+      <MediaCard />
       <FAQsSection />
       <GetStartedCard />
     </div>

@@ -30,7 +30,7 @@ export function SignupForm() {
   }
 
   return (
-    <Card className="w-full lg:w-[542px] rounded bg-[#FBF8E6] shadow-[0px_15px_35px_0px_#3C425714_0px_5px_15px_0px_#0000001F] pb-14 px-4">
+    <Card className="w-full lg:w-[542px] rounded bg-[#FBF8E6] shadow-[0px_15px_35px_0px_#3C425714_0px_5px_15px_0px_#0000001F] px-4 lg:px-0">
       <div className="w-full flex flex-col gap-[60px] justify-center items-center">
         <StepIndicator currentStep={currentStep} totalSteps={3} />
         <div className="">

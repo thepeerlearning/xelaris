@@ -17,19 +17,19 @@ interface ProjectItemProps {
 const projects: ProjectItemProps[] = [
   {
     id: 1,
-    author: "Owen",
+    author: "Brian",
     age: 11,
-    title: "PetSnap AI",
-    img: "/images/student_project-img_1.webp",
-    description: `Zoey created this cool computer program that can recognise pets in photos! Using Python and AI, her program can tell the difference between cats and dogs in just seconds.\n It's a simple but smart way to make identifying pets easier and faster.`,
+    title: "BookBuddy",
+    img: "/images/student_project-img_2.webp",
+    description: `Hi, I'm Brain, and I'm 10 years old. I really love reading. Sometimes when I'm reading a book, I forget how far I've gone or I lose interest halfway through. I noticed some of my friends have the same problem too.\n That's why I designed BookBuddy an app to help kids keep track of the books they've read and get rewards for finishing them. I used Figma to design it because I've been learning product design for the past six months, and I wanted to build something useful and fun for my project. With BookBuddy, you can earn badges like “Bookworm” or “Star Reader,” and it kind of turns reading into a game.`,
   },
   {
     id: 2,
-    author: "Nikolas",
+    author: "Zoey",
     age: 11,
-    img: "/images/student_project-img_2.webp",
-    title: "Everlane",
-    description: `Nikolas just pulled off something pretty cool! He built a replica of the Everlane store using only HTML and CSS. The result is super sleek and modern, and it's amazing how closely it matches the real thing. You can tell he put in a ton of effort to get every detail just right.\n Replicating a big brand's website isn't easy. It takes a solid grasp of design and some serious coding chops.`,
+    img: "/images/student_project-img_1.webp",
+    title: "ZoAI",
+    description: `Zoey is a 15-year-old student learning Python programming and  Artificial Intelligence. Inspired by her love for animals and curiosity about how computers understand images, she built a computer vision program that can accurately tell the difference between cats and dogs in photos.\nUsing Python and a basic machine learning model, she trained her program to recognize pet features and classify them within seconds. This project is part of her early journey into AI, where she's learning how technology can solve real-world problems.`,
   },
   {
     id: 3,
@@ -37,7 +37,31 @@ const projects: ProjectItemProps[] = [
     age: 10,
     img: "/images/student_project-img_3.webp",
     title: "Virus Rules",
-    description: `Zoja came up with an idea to create a platform where kids can learn about viruses. She called it Virus Rules, a fun and interactive way to educate kids about viruses. Her platform combines engaging quizzes with information about different types of viruses, how they spread, and, most importantly, how to stay safe.\n She keeps improving her platform, adding more quizzes and features to make it even better!`,
+    description: `Zoja, 10, is making learning about viruses fun with her game-based platform, "Virus Rule."\n Zoja is designing Virus Rule, a gamified learning platform that helps kids understand how viruses spread and how to protect themselves. Combining health education with interactive challenges, quizzes, and game-like activities, Zoja is using design thinking to make safety fun and memorable.\n “The problem I'm solving is that a lot of kids don't really know how viruses spread or how to stay safe,” she says. “I want to make it fun and easy to learn, so kids can protect themselves and others.” Zoja is learning product design and applying her creativity to build tools that empower young people with knowledge.`,
+  },
+  {
+    id: 4,
+    author: "Fedir",
+    age: 10,
+    img: "/images/student_project-img_3.webp",
+    title: "Virus Rules",
+    description: `Fedir, 12, is building a marketplace he calls 'Toy Cycle' to make toys affordable and accessible for kids.\n After noticing that he had tons of toys he no longer played with, most of them bought for him when he was younger, Fedir realized there was an opportunity to help others. At the same time, he knew there were kids who didn't have access to toys at all. So he came up with an idea: a digital marketplace where parents can buy and sell gently used toys.\n “Some families have extra toys just sitting at home,” Fedir says. “Others want to buy toys but can't always afford new ones. I'm building a place where both sides can help each other.”`,
+  },
+  {
+    id: 5,
+    author: "Zach",
+    age: 10,
+    img: "/images/student_project-img_3.webp",
+    title: "Virus Rules",
+    description: `Zach is building a custom online ordering platform for his school, where students can browse and purchase items like snacks, school supplies, or merchandise—all from their devices. His idea came from a simple observation: students often waste time in long queues or don't know what's available to buy. \n“I noticed that it can get really busy during breaks, and students don't always get what they need,” Zach says. “So I thought—what if we could just order what we want online and pick it up easily?” \nZach is currently learning web development and using his skills to build a solution tailored to the student experience. His project blends e-commerce with convenience, and he's already testing ideas with classmates.`,
+  },
+  {
+    id: 6,
+    author: "Brain",
+    age: 10,
+    img: "/images/student_project-img_3.webp",
+    title: "Virus Rules",
+    description: `Hi, I'm Brain, and I'm 10 years old. I really love reading. Sometimes when I'm reading a book, I forget how far I've gone or I lose interest halfway through. I noticed some of my friends have the same problem too. \n That's why I designed BookBuddy an app to help kids keep track of the books they've read and get rewards for finishing them. I used Figma to design it because I've been learning product design for the past four months, and I wanted to build something useful and fun for my project. With BookBuddy, you can earn badges like “Bookworm” or “Star Reader,” and it kind of turns reading into a game.`,
   },
 ]
 
@@ -139,8 +163,8 @@ export default function ProjectSection() {
   )
 
   return (
-    <div className="w-full h-full bg-[#202426] pt-[92px] 2xl:pt-[96px] md:pb-16 2xl:pb-[138px] flex justify-center items-center">
-      <div className="w-full 3xl:w-[1312px] flex flex-col justify-center gap-[30.87px] xl:gap-10 px-3 sm:px-[19.3px] md:px-6 lg:px-12 2xl:px-16 relative z-1">
+    <div className="w-full h-full bg-[#202426] pt-[40px] pb-[140px] 2xl:pt-[96px] md:pb-16 2xl:pb-[200px] flex justify-center items-center">
+      <div className="w-full 3xl:w-[1312px] flex flex-col justify-center gap-[130.87px] xl:gap-10 px-3 sm:px-[19.3px] md:px-6 lg:px-12 2xl:px-16 relative z-1">
         <h4 className="w-full font-inter font-normal text-[#FBF8E6] text-[30px]/[33.3px] md:text-[40px]/[44px] xl:text-[50px]/[44.8px] text-center">
           See what our students are building
         </h4>
@@ -198,10 +222,6 @@ export default function ProjectSection() {
 
 function ProjectCard({ project }: { project: ProjectItemProps }) {
   const isMobile = useMobile()
-
-  // Split the description by newline characters to create paragraphs
-  const descriptionParagraphs = project.description.split("\n").filter(Boolean)
-
   return (
     <motion.div
       whileHover={{ scale: isMobile ? 1 : 1.02 }}
@@ -211,32 +231,43 @@ function ProjectCard({ project }: { project: ProjectItemProps }) {
         stiffness: 200,
         mass: 0.8,
       }}
-      className="bg-[#FBF8E6] w-full h-[420px] sm:h-[500px] md:h-[700px] lg:h-[650px] xl:h-[467px] flex flex-col xl:flex-row gap-2 sm:gap-4 rounded-[6px] overflow-hidden shadow-xl"
+      className="bg-[#FBF8E6] w-full h-full xl:h-[576px] flex flex-col xl:flex-row gap-2 sm:gap-4 rounded-[16px] overflow-hidden relative bg-no-repeat bg-cover bg-[url('/small-project-img.svg')] xl:bg-[url('/project-bg.svg')]"
+      style={{
+        boxShadow:
+          "0px 0px 0px 2px #FCFCFC1A inset, 0px 32px 32px 0px #00000052",
+      }}
     >
       <div className="w-full flex-1 pt-4 sm:pt-6 md:pt-8 xl:pt-[62px] pb-4 sm:pb-6 md:pb-8 xl:pb-10 px-4 sm:px-6 xl:pl-12 xl:pr-6 flex flex-col gap-3 sm:gap-4 xl:gap-8">
-        <div className="text-[#1B1F23] font-inter font-normal text-sm sm:text-base md:text-lg leading-tight sm:leading-6">
+        {/* <div className="text-white font-inter font-normal text-sm sm:text-base md:text-lg leading-tight sm:leading-6">
           {`Built by ${project.author} (${project.age} years old)`}
-        </div>
+        </div> */}
         <div className="w-full flex flex-col gap-2 sm:gap-3 md:gap-4">
-          <h4 className="text-secondary font-inter font-semibold text-xl sm:text-2xl md:text-3xl xl:text-[35px] leading-tight xl:leading-[44px] tracking-[0.2px]">
+          <h4 className="text-white font-inter font-semibold text-[20.8px]/[24.96px] sm:text-[35px]/[44px] md:text-[40px]/[48px] tracking-[0.2px]">
             {project.title}
           </h4>
-          <p className="font-inter font-normal text-xs sm:text-sm md:text-base xl:text-lg leading-normal md:leading-7 text-[#494C4F] tracking-normal">
-            {descriptionParagraphs.map((paragraph, index) => (
-              <span key={index} className="mb-4 last:mb-0">
-                {paragraph.trim()}
-              </span>
-            ))}
+          <p className="font-inter font-normal text-xs sm:text-sm xl:text-[15px]/[24px] text-white tracking-normal flex flex-col gap-4">
+            {project?.description
+              ?.replace(/\\n/g, "\n")
+              .split("\n")
+              .map((line, idx) => (
+                <span key={idx} className="mt-b">
+                  {line}
+                  {idx < project?.description?.split("\n").length - 1 && <br />}
+                </span>
+              ))}
           </p>
         </div>
       </div>
-      <div className="relative w-full h-[180px] sm:h-[220px] md:h-[280px] xl:h-auto xl:w-1/2 overflow-hidden">
+      <div className="relative h-[204px] md:h-[619px] xl:h-auto xl:w-[518px] overflow-hidden">
         <Image
           src={project.img || "/placeholder.svg"}
           alt={`Screenshot of ${project.title} project by ${project.author}`}
           fill
-          unoptimized={project.img.endsWith(".gif")}
-          className="w-full h-[216.16px] xl:h-full rounded-tr-[6px] rounded-br-[6px] object-cover"
+          className={
+            project.title == "Virus Rules"
+              ? "w-full h-full object-cover absolute object-[80px_0px] xl:object-[55px_136px]"
+              : "w-full h-[216.16px] xl:h-full object-contain absolute object-[123px_-4px] xl:object-center"
+          }
           priority
           onError={(e) => {
             const target = e.target as HTMLImageElement
